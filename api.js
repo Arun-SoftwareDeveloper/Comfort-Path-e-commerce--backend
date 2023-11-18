@@ -4,6 +4,7 @@ const app = express();
 const UserRoutes = require("./Routes/UserRoutes");
 const PaymentRotues = require("./Routes/PaymentRouter");
 const protectedRoutes = require("./Routes/MenRoutes");
+const WomenRoutes = require("./Routes/WomenShoes");
 const dbUrl =
   "mongodb+srv://arunramasamy46:arunramasamy46@cluster0.1pscbqf.mongodb.net/?retryWrites=true&w=majority";
 const bodyParser = require("body-parser");
@@ -25,6 +26,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/", UserRoutes);
 app.use("/api", protectedRoutes);
+app.use("/womenShoes", WomenRoutes);
 
 app.use("/payment", PaymentRotues);
 app.get("/", (req, res) => {
