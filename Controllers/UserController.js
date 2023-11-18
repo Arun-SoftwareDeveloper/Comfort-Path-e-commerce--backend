@@ -96,7 +96,7 @@ async function forgotPassword(req, res) {
       to: user.email,
       subject: "Reset your password",
       html: `<h1>Hello ${user.firstName}</h1>
-<a href="https://poetic-kleicha-bb5e09.netlify.app/resetPassword/${token}">Click here </a>`,
+<a href="https://poetic-kleicha-bb5e09.netlify.appgi/resetPassword/${token}">Click here </a>`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
