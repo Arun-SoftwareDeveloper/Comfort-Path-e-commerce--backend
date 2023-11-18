@@ -28,7 +28,7 @@ app.use("/", UserRoutes);
 app.use("/api", protectedRoutes);
 app.use("/womenShoes", WomenRoutes);
 
-// app.use("/payment", PaymentRotues);
+app.use("/payment", PaymentRotues);
 app.get("/", (req, res) => {
   res.send("Hello");
 });
