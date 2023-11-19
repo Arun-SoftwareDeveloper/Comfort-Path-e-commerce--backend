@@ -1,4 +1,4 @@
-const Payment = require("../models/PaymentModel");
+const Payment = require("../Models/PaymentModel");
 const Razorpay = require("razorpay");
 const nodemailer = require("nodemailer");
 
