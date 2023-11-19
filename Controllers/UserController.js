@@ -94,9 +94,15 @@ async function forgotPassword(req, res) {
     const mailOptions = {
       from: "arunramasamy46@gmail.com", // Replace with your Gmail email
       to: user.email,
-      subject: "Reset your password",
-      html: `<h1>Hello ${user.firstName}</h1>
-<a href="https://poetic-kleicha-bb5e09.netlify.appgi/resetPassword/${token}">Click here </a>`,
+      subject: "Reset Your Comfort Path Password",
+      html: `
+    <h1>Hello ${user.firstName},</h1>
+    <p>We noticed that you requested to reset your password for Comfort Path.</p>
+    <p>Don't worry! Click the link below to securely reset your password:</p>
+    <a href="https://poetic-kleicha-bb5e09.netlify.app/resetPassword/${token}" style="background-color: #ff8c00; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">Reset Your Password</a>
+    <p>If you did not request a password reset, please ignore this email.</p>
+    <p>Thank you for shopping with Comfort Path!</p>
+  `,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

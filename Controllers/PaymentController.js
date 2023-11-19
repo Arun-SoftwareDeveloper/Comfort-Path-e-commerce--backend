@@ -79,8 +79,14 @@ const createOrder = async (req, res) => {
       const mailOptions = {
         from: "arunramasamy46@gmail.com",
         to: recipientEmail,
-        subject: "Order Created",
-        text: `Your order has been successfully created.`,
+        subject: "Order Confirmation from Comfort Path",
+        html: `
+    <h1>Dear Customer,</h1>
+    <p>Thank you for choosing Comfort Path! Your order has been successfully created.</p>
+       <p>Your items will be ready to ship</p>
+    <p>For any questions or concerns, please contact our customer support.</p>
+    <p>Thank you for shopping with Comfort Path!</p>
+  `,
       };
 
       transporter.sendMail(mailOptions, (emailError, info) => {
