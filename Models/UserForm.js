@@ -17,6 +17,12 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  token: {
+    type: String,
+  },
+  resetToken: {
+    type: String,
+  },
 });
 
 const User = mongoose.model("User", UserSchema);

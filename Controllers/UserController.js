@@ -99,7 +99,8 @@ async function forgotPassword(req, res) {
     <h1>Hello ${user.firstName},</h1>
     <p>We noticed that you requested to reset your password for Comfort Path.</p>
     <p>Don't worry! Click the link below to securely reset your password:</p>
-    <a href="https://poetic-kleicha-bb5e09.netlify.app/resetPassword/${token}" style="background-color: #ff8c00; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">Reset Your Password</a>
+     <p>Reset Token:${token}</p>
+    <a href="https://poetic-kleicha-bb5e09.netlify.app/resetPassword" style="background-color: #ff8c00; color: #fff; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">Reset Your Password</a>
     <p>If you did not request a password reset, please ignore this email.</p>
     <p>Thank you for shopping with Comfort Path!</p>
   `,
@@ -119,12 +120,6 @@ async function forgotPassword(req, res) {
     console.error("Error Occurred" + " " + error);
     return res.status(501).send({ message: "Internal Server Error" });
   }
-}
-
-async function generateToken(user) {
-  const payload = { userId: user._id };
-  const options = { expiresIn: "1h" }; // Token expires in 1 hour
-  return jwt.sign(payload, secretKey, options);
 }
 
 async function resetPassword(req, res) {
