@@ -80,7 +80,7 @@ const createOrder = async (req, res) => {
         from: "arunramasamy46@gmail.com",
         to: recipientEmail,
         subject: "Order Created",
-        text: `Your order with receipt number ${order.receipt} has been successfully created.`,
+        text: `Your order has been successfully created.`,
       };
 
       transporter.sendMail(mailOptions, (emailError, info) => {
