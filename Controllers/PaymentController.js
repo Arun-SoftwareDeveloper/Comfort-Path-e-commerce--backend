@@ -81,7 +81,7 @@ const createOrder = async (req, res) => {
         to: recipientEmail,
         subject: "Order Created",
         text: `Your order has been successfully created.`,
-        html: `<p<a href="https://poetic-kleicha-bb5e09.netlify.appgi/bill">Click here</a>to collect the bill></p>?`,
+        html: `<p><a href="https://poetic-kleicha-bb5e09.netlify.app/bill">Click here</a> to collect the bill.</p>`,
       };
 
       transporter.sendMail(mailOptions, (emailError, info) => {
