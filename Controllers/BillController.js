@@ -1,5 +1,3 @@
-// controllers/billController.js
-
 const nodemailer = require("nodemailer");
 
 const calculateBill = (selectedProduct) => {
