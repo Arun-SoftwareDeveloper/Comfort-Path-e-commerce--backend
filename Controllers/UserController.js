@@ -121,6 +121,12 @@ async function forgotPassword(req, res) {
   }
 }
 
+async function generateToken(user) {
+  const payload = { userId: user._id };
+  const options = { expiresIn: "1h" }; // Token expires in 1 hour
+  return jwt.sign(payload, secretKey, options);
+}
+
 async function resetPassword(req, res) {
   try {
     const { token, password } = req.body;
